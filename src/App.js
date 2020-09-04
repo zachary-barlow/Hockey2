@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import {Route, Switch} from 'react-router-dom';
+import Division from './Components/Divisions';
+import Team from './Components/Team';
+
+// https://gitlab.com/dword4/nhlapi/-/blob/master/stats-api.md
+// https://statsapi.web.nhl.com/api/v1/divisions
+// https://statsapi.web.nhl.com/api/v1/teams
+// https://github.com/erunion/sport-api-specifications/tree/master/nhl
+
+
+
+
 
 function App() {
+  const [team, setTeam] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://statsapi.web.nhl.com/api/v1/standings`)
+    .then(results => {
+      return results.json();
+    }).then(data => {
+      setTeam(data.records);
+    })
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hockey API Project</h1>
+      <Switch>
+        <Route exact path="/">
+          <Division team={team}/>
+        </Route>
+        <Route exact path="/:teamID">
+          <Team team={team}/>
+        </Route>
+      </Switch>
     </div>
   );
 }

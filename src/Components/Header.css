@@ -1,0 +1,29 @@
+/* .header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.nav-list {
+  display: flex;
+} */
+.header {
+  position: relative;
+  width: 100%;
+  font-family: 'Gudea', sans-serif;
+  grid-row: 3;
+  grid-column: 3 / span 6;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  font-size: 24px;
+}
+.nav-list li {
+  list-style: none;
+  padding: 5px;
+  border-right: 1px solid #ddd;
+}

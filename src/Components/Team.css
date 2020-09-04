@@ -1,0 +1,201 @@
+.grey {
+  background-color: rgb(129, 129, 129);
+  color: white;
+}
+.green {
+  background-color: var(--color-green);
+  color: white;
+}
+
+.teamStatPage {
+  /*   display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; */
+     display: grid;
+    grid-template-rows: repeat(10, minmax(10%, 1fr)); 
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  */
+     grid-template-columns: repeat(10, minmax(10%, 1fr));
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.container-small {
+  margin: 0.5em 0.5em;
+  padding: 0.5em;
+  height: auto;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.1), 
+              0px 2px 10px 0px rgba(0, 0, 0, 0.1),
+              0px -5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.container-small ul {
+  margin: 0 auto;
+}
+.container-small div {
+  position: relative;
+  display:flex;
+}
+.container-small li {
+  list-style: none;
+  margin: 5px 0 0 -1em;
+  /* box-shadow: 0px 1px 5px 0px #585353; */
+}
+.container-small h3 {
+  text-align: center;
+  font-size: 24px;
+  color: var(--color-blue);
+}
+
+
+.roster {
+  grid-column: 3 / span 6;
+  grid-row: 4 / 13;
+}
+.stats {
+  grid-column: 1 / 2;
+  grid-row: 3 / span 3;
+}
+.stats span {
+  color: var(--color-green);
+}
+.player-stats {
+  grid-column: 3 / 4;
+  grid-row: 3 / span 3;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+.stat-td {
+  width: 100%;
+}
+.stat-td span {
+  color: var(--color-green);
+}
+.stat-td ul {
+  list-style: none;
+  display: flex;
+}
+.stat-td li {
+  margin: 0.3em 1em;
+  font-weight: 500;
+}
+
+.schedule {
+  grid-row: 1 / 3;
+  grid-column: 1 / 12;
+  margin: 0.5em 0.5em;
+  padding: 0.5em;
+  height: auto;
+  color: black;
+  border-radius: 5px;
+}
+.schedule div {
+  position: relative;
+  display:flex;
+  justify-content: center;
+}
+.schedule h3 {
+  text-align: center;
+  font-size: 24px;
+  color: var(--color-blue);
+}
+
+.back {
+  position: absolute;
+  top: 25px;
+  left: 300px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--color-purple);
+  color: white;
+  box-shadow: 0px 5px 2px 0px rgba(0, 0, 0, 0.1), 
+              0px 2px 10px 0px rgba(0, 0, 0, 0.1),
+              0px -5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+/* GAME */
+.game {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: -0.5em 1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  width: 175px;
+}
+.game span {
+  padding-left: 0.1em;
+}
+.game span:nth-child(1) {
+  padding:  0.1em;
+}
+.game div {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3em;
+}
+.team {
+  font-size: 14px;
+  font-weight: 600;
+}
+.team span {
+  color: var(--color-red);
+}
+.bot {
+  margin-bottom: 0.3em;
+}
+.top {
+  margin-top: 0.3em;
+}
+.time {
+  float: right;
+}
+
+.player {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  width: auto;
+  text-align: center;
+  background-color: var(--color-green);
+  padding: 1em;
+  font-size: 18px;
+  color: white;
+}
+td {
+  text-align: center;
+  height: 2em;
+  font-size: 16px;
+  color: black;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+tr {
+  cursor: pointer;
+}
+/*tr:nth-child(even){background-color: #f2f2f2}*/
+
+
+.left {
+  text-align: left;
+}
